@@ -1,0 +1,14 @@
+using System;
+// Represents a single journal entry
+class Entry
+{
+    // Responsibility
+    // To take the entry and store it.
+
+    // State
+    // _entry
+
+    // Behaviour
+
+    string _entry = Console.ReadLine();
+}
