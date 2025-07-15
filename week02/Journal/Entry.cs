@@ -9,8 +9,7 @@ class Entry
     // Behaviour
     public string TakeResponse()
     {
-        Console.ReadLine();
-        Console.WriteLine(_response);
+        _response = Console.ReadLine();
         return _response;
     }
 }

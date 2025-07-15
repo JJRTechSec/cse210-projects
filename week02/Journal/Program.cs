@@ -9,7 +9,9 @@ class Program
         prompt.GenerateJournalPrompt();
 
         Entry response = new Entry();
-        response._response = response.TakeResponse();
+        response.TakeResponse();
+
+        Console.WriteLine(response._response);
 
         //prompt1._response = Console.ReadLine();
         // Display the journal
