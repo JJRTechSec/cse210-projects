@@ -5,13 +5,14 @@ class Program
     static void Main(string[] args)
     {
         // Write a new entry
+        
+
         PromptGenerator prompt = new PromptGenerator();
+        prompt.DisplayProgramOptions();
         prompt.GenerateJournalPrompt();
 
         Entry response = new Entry();
         response.TakeResponse();
-
-        Console.WriteLine(response._response);
 
         //prompt1._response = Console.ReadLine();
         // Display the journal
