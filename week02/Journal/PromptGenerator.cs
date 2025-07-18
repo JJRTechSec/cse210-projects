@@ -16,20 +16,15 @@ public class PromptGenerator
     {
         Console.WriteLine("Welcome to your journal program.");
         int programListIndex = programOptions.Count();
-        for (int index = 0; index <= programListIndex; index++)
+        for (int index = 1; index <= programListIndex; index++)
         {
-            index = index + 1;
-            foreach (string option in programOptions)
-            {
-                Console.WriteLine(option[programListIndex] + " - " + option);
-            }
+            Console.WriteLine($"{index} - {programOptions[index-1]}");
         }
-
-        Console.Write("Please select an option from above (1-5):");
     }
 
     public void ReceiveUserProgramChoice()
     {
+        Console.Write("Please select an option from above (1-5):");
         _userProgramChoice = Console.ReadLine();
     }
 

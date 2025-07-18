@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         // Write a new entry
-        
+
 
         PromptGenerator prompt = new PromptGenerator();
         prompt.DisplayProgramOptions();
@@ -13,6 +13,7 @@ class Program
 
         Entry response = new Entry();
         response.TakeResponse();
+        response.DisplayResponse();
 
         //prompt1._response = Console.ReadLine();
         // Display the journal
