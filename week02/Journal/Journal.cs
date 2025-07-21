@@ -1,7 +1,14 @@
 using System;
+using System.IO;
 
 class Journal
 {
-    // Store a list of entries;
-    public List<Entry> _entries = new List<Entry>();
+    public static void SaveToFile(List<Entry> _entries)
+    {
+        string filename = "journal.txt";
+        using (StreamWriter outputFile = new StreamWriter(filename))
+        {
+            Console.WriteLine(_entries);
+        }
+    }
 }

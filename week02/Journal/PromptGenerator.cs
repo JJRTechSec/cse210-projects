@@ -24,7 +24,7 @@ public class PromptGenerator
 
     public string ReceiveUserProgramChoice()
     {
-        Console.Write("Please select an option from above (1-5):");
+        Console.Write("Please select an option from above (1-5): ");
         _userProgramChoice = Console.ReadLine();
         return _userProgramChoice;
     }

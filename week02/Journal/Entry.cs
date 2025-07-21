@@ -6,7 +6,6 @@ class Entry
     // To take the entry and store it.
     // State
     public string _response;
-    public string _givenPrompt;
     
     // Behaviour
     public string TakeResponse()
