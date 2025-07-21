@@ -22,10 +22,11 @@ public class PromptGenerator
         }
     }
 
-    public void ReceiveUserProgramChoice()
+    public string ReceiveUserProgramChoice()
     {
         Console.Write("Please select an option from above (1-5):");
         _userProgramChoice = Console.ReadLine();
+        return _userProgramChoice;
     }
 
     // Journal Question Prompts
@@ -38,13 +39,11 @@ public class PromptGenerator
         "What do you want to achieve tomorrow?"
     };
 
-    static Random randomPrompt = new Random();
-    public int randomIndex = randomPrompt.Next(prompts.Count());
+    public static Random randomPrompt = new Random();
 
-    public void GenerateJournalPrompt()
+    public string GenerateJournalPrompt()
     {
-        {
-            Console.WriteLine(prompts[randomIndex]);
-        }
+        int randomIndex = randomPrompt.Next(prompts.Count());
+        return prompts[randomIndex];
     }
 }

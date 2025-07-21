@@ -6,6 +6,7 @@ class Entry
     // To take the entry and store it.
     // State
     public string _response;
+    public string _givenPrompt;
     
     // Behaviour
     public string TakeResponse()
@@ -14,10 +15,10 @@ class Entry
         return _response;
     }
 
-    public void DisplayResponse()
+    public string ReturnEntry(string _givenPrompt)
     {
         DateTime currentTime = DateTime.Now;
         string dateText = currentTime.ToShortDateString();
-        Console.WriteLine($"{dateText} - {_response}");
+        return $"{_givenPrompt} - {dateText} - {_response}";
     }
 }
