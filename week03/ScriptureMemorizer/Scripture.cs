@@ -6,7 +6,7 @@ public class Scripture
 
     private List<PresentWord> _words = new List<PresentWord>();
 
-    //private Scripture(Reference Reference, string text);
+    public ScriptureText(Reference reference, string text);
 
     private void HideRandomWords()
     {
