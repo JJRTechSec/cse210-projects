@@ -13,7 +13,17 @@ class Program
         if (programPrompt.ReceiveUserProgramChoice() == "1")
         {
             PromptGenerator journalPrompt = new PromptGenerator();
-            journalPrompt.GenerateJournalPrompt();
+            Console.WriteLine(journalPrompt.GenerateJournalPrompt());
+
+            Entry newEntry = new Entry();
+            string userEntry = newEntry.ReceiveNewEntry();
+
+            Journal journalEntries = new Journal();
+            journalEntries.Entries.Add(userEntry);
+            journalEntries.DisplayJournalEntries();
+
+            // TO CONTINUE
+            // STORE DATE AND PROMPT AS WELL TO ENTRY.
         }
         
 
