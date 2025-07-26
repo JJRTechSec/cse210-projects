@@ -13,10 +13,11 @@ class Program
         if (programPrompt.ReceiveUserProgramChoice() == "1")
         {
             PromptGenerator journalPrompt = new PromptGenerator();
-            Console.WriteLine(journalPrompt.GenerateJournalPrompt());
+            string prompt = journalPrompt.GenerateJournalPrompt();
+            Console.WriteLine(prompt);
 
             Entry newEntry = new Entry();
-            string userEntry = newEntry.ReceiveNewEntry();
+            string userEntry = newEntry.ReceiveNewEntry(prompt);
 
             Journal journalEntries = new Journal();
             journalEntries.Entries.Add(userEntry);

@@ -7,9 +7,11 @@ class Entry
     // State
 
     // Behaviour
-    public string ReceiveNewEntry()
+    public string ReceiveNewEntry(string prompt)
     {
         string newestEntry = Console.ReadLine();
-        return newestEntry;
+        DateTime currentDate = DateTime.Now;
+        string dateText = currentDate.ToShortDateString();
+        return $"{dateText}: {prompt} - {newestEntry}";
     }
 }
