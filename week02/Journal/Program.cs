@@ -4,34 +4,54 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Write a new entry
+        string programChoice = "";
+        //do
+        //{
+        //    PromptGenerator programOptions = new PromptGenerator();
+        //    programOptions.DisplayProgramOptions();
+        //    programChoice = programOptions.ReceiveUserProgramChoice();
+        //} while (programChoice != "5");
 
-
-        PromptGenerator programPrompt = new PromptGenerator();
-        programPrompt.DisplayProgramOptions();
-
-        if (programPrompt.ReceiveUserProgramChoice() == "1")
+        while (programChoice != "5")
         {
-            PromptGenerator journalPrompt = new PromptGenerator();
-            string prompt = journalPrompt.GenerateJournalPrompt();
-            Console.WriteLine(prompt);
+            PromptGenerator programOptions = new PromptGenerator();
+            programOptions.DisplayProgramOptions();
+            programChoice = programOptions.ReceiveUserProgramChoice();
 
-            Entry newEntry = new Entry();
-            string userEntry = newEntry.ReceiveNewEntry(prompt);
+            if (programChoice == "1")
+            {
+                //WRITE
+                PromptGenerator journalPrompt = new PromptGenerator();
+                string prompt = journalPrompt.GenerateJournalPrompt();
+                Console.WriteLine(prompt);
 
-            Journal journalEntries = new Journal();
-            journalEntries.Entries.Add(userEntry);
-            journalEntries.DisplayJournalEntries();
+                Entry newEntry = new Entry();
+                string userEntry = newEntry.ReceiveNewEntry(prompt);
 
-            // TO CONTINUE
-            // STORE DATE AND PROMPT AS WELL TO ENTRY.
+                Journal journalEntries = new Journal();
+                journalEntries.Entries.Add(userEntry);
+            }
+
+            else if (programChoice == "2")
+            {
+                //DISPLAY
+            }
+
+            else if (programChoice == "3")
+            {
+                //SAVE
+            }
+
+            else if (programChoice == "4")
+            {
+                //LOAD
+            }
+
+            else if (programChoice == "5")
+            {
+                Console.WriteLine("Have an amazing rest of your day");
+                break;
+            }
         }
-        
-
-        // Display the journal
-        // Save journal to a file
-        // Load journal from a file
-        // Provide a menu for user to choose from (initial prompts)
-        // List of prompts for user to answer
     }
 }
