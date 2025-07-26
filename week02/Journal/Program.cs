@@ -1,3 +1,4 @@
+// For creativity, I added the time stamp to the journal entry, so the user is able to see what time of day they wrote in the journal.
 using System;
 
 class Program
@@ -41,7 +42,9 @@ class Program
 
             else if (programChoice == "4")
             {
-                //LOAD
+                Console.Write("Please name the file you wish to load: ");
+                journal._filename = Console.ReadLine();
+                journal.LoadFile(journal._filename);
             }
 
             else if (programChoice == "5")

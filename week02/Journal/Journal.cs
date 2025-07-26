@@ -10,9 +10,9 @@ class Journal
     public void DisplayJournalEntries()
     {
         foreach (string entry in Entries)
-            {
-                Console.WriteLine(entry);
-            }
+        {
+            Console.WriteLine(entry);
+        }
     }
 
     public void SaveFile(string _filename)
@@ -22,6 +22,19 @@ class Journal
             foreach (string entry in Entries)
             {
                 journal.WriteLine(entry);
+            }
+        }
+    }
+
+    public void LoadFile(string _filename)
+    {
+        Entries.Clear();
+        using (StreamReader journal = new StreamReader(_filename))
+        {
+            string entry;
+            while ((entry = journal.ReadLine()) != null)
+            {
+                Entries.Add(entry);
             }
         }
     }

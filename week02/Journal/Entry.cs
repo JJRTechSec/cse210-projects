@@ -12,6 +12,7 @@ class Entry
         string newestEntry = Console.ReadLine();
         DateTime currentDate = DateTime.Now;
         string dateText = currentDate.ToShortDateString();
-        return $"{dateText}: {prompt} - {newestEntry}";
+        string timeText = currentDate.ToShortTimeString();
+        return $"{dateText}, {timeText}: {prompt} - {newestEntry}";
     }
 }
