@@ -5,12 +5,7 @@ class Program
     static void Main(string[] args)
     {
         string programChoice = "";
-        //do
-        //{
-        //    PromptGenerator programOptions = new PromptGenerator();
-        //    programOptions.DisplayProgramOptions();
-        //    programChoice = programOptions.ReceiveUserProgramChoice();
-        //} while (programChoice != "5");
+        Journal journal = new Journal();
 
         while (programChoice != "5")
         {
@@ -27,19 +22,21 @@ class Program
 
                 Entry newEntry = new Entry();
                 string userEntry = newEntry.ReceiveNewEntry(prompt);
-
-                Journal journalEntries = new Journal();
-                journalEntries.Entries.Add(userEntry);
+                journal.Entries.Add(userEntry);
             }
 
             else if (programChoice == "2")
             {
                 //DISPLAY
+                journal.DisplayJournalEntries();
             }
 
             else if (programChoice == "3")
             {
                 //SAVE
+                Console.WriteLine("Please name the file you wish to save your journal to: ");
+                journal._filename = Console.ReadLine();
+                journal .SaveFile(journal._filename);
             }
 
             else if (programChoice == "4")
