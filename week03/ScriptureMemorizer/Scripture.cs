@@ -3,18 +3,23 @@ using System;
 public class Scripture
 {
     private Reference _reference;
+    private string _text;
 
-    private List<PresentWord> _words = new List<PresentWord>();
+    private List<Word> _words = new List<Word>();
 
-    public ScriptureText(Reference reference, string text);
+    public Scripture(Reference reference, string text)
+    {
+        _reference = reference;
+        _text = text;
+    }
 
-    private void HideRandomWords()
+    public void HideRandomWords()
     {
     }
 
-    private string GetDisplayText()
+    public string GetDisplayText()
     {
-        return "";
+        return $"{_reference}, {_text}";
     }
 
     private bool IsCompletelyHidden()
