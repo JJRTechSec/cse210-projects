@@ -5,7 +5,10 @@ public class Word
     private string _text;
     private bool _isHidden;
 
-    //public PresentWord(string text);
+    public Word(string text)
+    {
+        _text = text;
+    }
 
     private void Hide()
     {
@@ -19,9 +22,9 @@ public class Word
 
     //private bool IsHidden()
 
-    private string GetDisplayText()
+    public string GetDisplayText()
     {
-        return "";
+        return _text;
     }
 
 }

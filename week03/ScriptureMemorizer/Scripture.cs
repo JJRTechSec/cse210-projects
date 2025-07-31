@@ -4,17 +4,23 @@ public class Scripture
 {
     private Reference _reference;
     private string _text;
-
     private List<Word> _words = new List<Word>();
 
-    public Scripture(Reference reference, string text)
+    public Scripture(string text)
     {
-        _reference = reference;
+        //_reference = reference;
         _text = text;
+        string separatedWords =_text.Split(" ").ToString();
+        Console.WriteLine(separatedWords);
     }
 
     public void HideRandomWords()
     {
+    }
+
+    public string GetScriptureText()
+    {
+        return _text;
     }
 
     public string GetDisplayText()
