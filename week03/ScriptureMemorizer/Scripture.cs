@@ -3,29 +3,31 @@ using System;
 public class Scripture
 {
     private Reference _reference;
-    private string _text;
+    private Random _random = new Random();
     private List<Word> _words = new List<Word>();
 
-    public Scripture(string text)
+    public Scripture(Reference reference, string text)
     {
-        //_reference = reference;
-        _text = text;
-        string separatedWords =_text.Split(" ").ToString();
-        Console.WriteLine(separatedWords);
+        _reference = reference;
+        string[] separatedWords = text.Split(" ");
+        foreach (string word in separatedWords)
+        {
+            _words.Add(new Word(word));
+        }
     }
 
-    public void HideRandomWords()
+    public void HideRandomWords(int numberToHide)
     {
     }
 
     public string GetScriptureText()
     {
-        return _text;
+        return "";
     }
 
     public string GetDisplayText()
     {
-        return $"{_reference}, {_text}";
+        return $"{_reference}";
     }
 
     private bool IsCompletelyHidden()

@@ -20,7 +20,10 @@ public class Word
         Console.WriteLine();
     }
 
-    //private bool IsHidden()
+    private bool IsHidden()
+    {
+        return true;
+    }
 
     public string GetDisplayText()
     {
