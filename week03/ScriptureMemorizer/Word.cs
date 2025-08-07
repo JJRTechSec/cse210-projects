@@ -3,31 +3,32 @@ using System;
 public class Word
 {
     private string _text;
-    private bool _isHidden;
+    public bool _isHidden;
 
     public Word(string text)
     {
         _text = text;
+        _isHidden = false;
     }
 
-    private void Hide()
+    public void Hide()
     {
-        Console.WriteLine();
+        _isHidden = true;
     }
 
-    private void Show()
+    public void Show()
     {
-        Console.WriteLine();
+        _isHidden = false;
     }
 
-    private bool IsHidden()
+    public bool IsHidden()
     {
-        return true;
+        return _isHidden;
     }
 
     public string GetDisplayText()
     {
-        return _text;
+        return _isHidden ? new string('_', _text.Length) : _text;
     }
 
 }

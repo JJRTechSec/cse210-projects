@@ -26,16 +26,11 @@ public class Reference
 
     public string GetReference()
     {
-        return $"{_book} {_chapter}:{_verse}";
+        return $"{_book} {_chapter}:{_verse} -";
     }
 
     public string GetReferenceMultiple()
     {
         return $"{_book}, {_chapter}, {_verse}, {_endVerse}";
-    }
-
-    public string GetDisplayText()
-    {
-        return "";
     }
 }
