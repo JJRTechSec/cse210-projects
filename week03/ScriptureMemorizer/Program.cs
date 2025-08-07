@@ -27,6 +27,7 @@ class Program
             text.HideRandomWords(random.Next(3, 6));
         }
 
+        Console.Clear();
         Console.WriteLine(text.GetDisplayText());
     }
 }
