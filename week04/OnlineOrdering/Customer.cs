@@ -9,4 +9,14 @@ public class Customer
     {
         return true;
     }
+
+    public string GetCustomerName()
+    {
+        return _customerName;
+    }
+
+    public string GetCustomerAddress()
+    {
+        return "";
+    }
 }
