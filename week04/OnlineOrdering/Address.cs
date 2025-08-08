@@ -6,12 +6,6 @@ public class Address
     private string _city;
     private string _stateOrProvince;
     private string _country;
-    private bool isDomestic;
-
-    public bool HomeorAway()
-    {
-        return true;
-    }
 
     public string SetStreetAddress(string street)
     {
@@ -39,15 +33,8 @@ public class Address
 
     public bool GetDomesticOrNot()
     {
-        if (_country.ToLower() == "usa" || _country.ToLower() == "us")
-        {
-            isDomestic = true;
-        }
-        else
-        {
-            isDomestic = false;
-        }
-        return isDomestic;
+        string country = _country.ToLower();
+        return country == "usa" || country == "us";
     }
 
     public string DisplayAddressInformation()

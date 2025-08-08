@@ -1,46 +1,60 @@
 using System;
+using System.Collections.Generic;
 
 public class Order
 {
-    private double _productPrice;
-    private double _shippingPrice;
-    private double _totalPrice;
+    public List<Product> _products = new List<Product>();
+    private Customer _customer;
 
-    public List<Product> products = new List<Product>();
-
-    // CONTAINS LIST OF PRODUCTS AND A CUSTOMER
-    // CAN CALCULATE THE TOTAL COST OF THE ORDER
-    // CAN RETURN A STRING FOR THE PACKING LABEL
-    // CAN RETURN A STRING FOR THE SHIPPING LABEL
-    // COMPANY IS BASED IN THE USA. IF LIVING IN USA, SHIPPING COST IS $5. IF LIVING ABROAD, IT'S $35.
-    // PACKING LABEL SHOULD LIST THE NAME AND PRODUCT ID OF EACH PRODUCT IN THE ORDER
-    // SHIPPING LABEL SHOULD LIST NAME AND ADDRESS OF CUSTOMER
-
-    public double SetProductPrice(double price)
+    public void SetCustomer(Customer customer)
     {
-        _productPrice = price;
-        return _productPrice;
+        _customer = customer;
     }
 
-    public double SetShippingPrice(double price)
+    public void AddProduct(Product product)
     {
-        _shippingPrice = price;
-        return _shippingPrice;
+        _products.Add(product);
     }
 
-
-    public double SetTotalPrice(double price)
+    public double CalculateTotalPrice()
     {
-        _totalPrice = price;
-        return _totalPrice;
-    }
+        double total = 0;
 
+        foreach (Product product in _products)
+        {
+            total += product.GetTotalProductPrice();
+        }
+
+        double shippingCost;
+        if (_customer.IsDomestic())
+        {
+            shippingCost = 5;
+        }
+        else
+        {
+            shippingCost = 35;
+        }
+
+        total += shippingCost;
+
+        return total;
+    }
 
     public void DisplayPackingLabel()
     {
-        foreach (Product product in products)
+        Console.WriteLine("PACKING LABEL:");
+
+        foreach (Product product in _products)
         {
             product.DisplayProductInfo();
         }
+        Console.WriteLine();
+    }
+
+    public void DisplayShippingLabel()
+    {
+        Console.WriteLine("SHIPPING LABEL: ");
+        Console.WriteLine(_customer.GetShippingLabel());
+        Console.WriteLine();
     }
 }

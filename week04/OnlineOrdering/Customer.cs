@@ -5,18 +5,24 @@ public class Customer
     private string _customerName;
     private Address _customerAddress;
 
-    public bool DomesticOrNot()
+    public string SetCustomerName(string name)
     {
-        return true;
-    }
-
-    public string GetCustomerName()
-    {
+        _customerName = name;
         return _customerName;
     }
 
-    public string GetCustomerAddress()
+    public void SetCustomerAddress(Address address)
     {
-        return "";
+        _customerAddress = address;
+    }
+
+    public bool IsDomestic()
+    {
+        return _customerAddress.GetDomesticOrNot();
+    }
+
+    public string GetShippingLabel()
+    {
+        return $"{_customerName}\n{_customerAddress.DisplayAddressInformation()}";
     }
 }
