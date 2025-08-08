@@ -6,7 +6,7 @@ public class Order
     private double _shippingPrice;
     private double _totalPrice;
 
-    public List<string> products = new List<string>();
+    public List<Product> products = new List<Product>();
 
     // CONTAINS LIST OF PRODUCTS AND A CUSTOMER
     // CAN CALCULATE THE TOTAL COST OF THE ORDER
@@ -38,6 +38,9 @@ public class Order
 
     public void DisplayPackingLabel()
     {
-
+        foreach (Product product in products)
+        {
+            product.DisplayProductInfo();
+        }
     }
 }

@@ -6,11 +6,12 @@ public class Product
     private int _productId;
     private double _productPrice;
     private int _productQuantity;
+    private double _totalPrice;
 
-    public double TotalProductPrice()
+    private double GetTotalProductPrice()
     {
-        double totalPrice = _productQuantity * _productPrice;
-        return totalPrice;
+        double _totalPrice = _productQuantity * _productPrice;
+        return _totalPrice;
     }
 
     public string SetProductName(string productName)
@@ -35,5 +36,10 @@ public class Product
     {
         _productQuantity = quantity;
         return _productQuantity;
+    }
+
+    public void DisplayProductInfo()
+    {
+        Console.WriteLine($"Product: {_productName}; Product ID: {_productId}; Product Price: {_productPrice}; Quantity: { _productQuantity}; Total Price: {GetTotalProductPrice()}");
     }
 }
